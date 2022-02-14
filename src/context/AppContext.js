@@ -11,7 +11,7 @@ export const AppProvider = ({children}) => {
 	// ?obiect pt mesaj sa il arat
 	const [error, setError] = useState({show: false, msg: ''});
 
-	const fetchMovies =async ()=>{
+	const fetchMovies = async ()=>{
 		setIsLoading(true)
 		try{
 			// !$s "docs"
@@ -30,7 +30,7 @@ export const AppProvider = ({children}) => {
 	}
 	useEffect(()=>{
 		fetchMovies()
-	}, [])
+	}, [query]) //!fara query nu pot face update la search
 
 	return (
 		<AppContext.Provider value={{query, setQuery, movies, setMovies, isLoading, setIsLoading, error, setError}}>
