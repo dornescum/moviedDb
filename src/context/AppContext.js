@@ -33,7 +33,7 @@ export const AppProvider = ({children}) => {
 	}, [query]) //!fara query nu pot face update la search
 
 	return (
-		<AppContext.Provider value={{query, setQuery, movies, setMovies, isLoading, setIsLoading, error, setError}}>
+		<AppContext.Provider value={{query, setQuery, movies, isLoading, error}}>
 			{children}
 		</AppContext.Provider>
 	);

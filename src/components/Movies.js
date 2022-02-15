@@ -5,10 +5,11 @@ import defaultImg from '../assets/cinema.webp'
 
 const Movies = () => {
 	const {movies, isLoading} =useGlobalContext();
+	// console.log(movies);
 	return (
-		<div className='flex flex-col md:flex-row justify-center items-center'>
+		<div className='flex flex-col md:flex-row justify-center items-center mb-32'>
 			{isLoading && <p>Loading</p>}
-			<div className='flex flex-row flex-wrap w-full px-2 md:px-0 md:w-4/5 gap-2 justify-center items-center'>
+			<div className='flex flex-row flex-wrap w-full px-4 md:px-0 md:w-4/5 gap-2 justify-center items-center'>
 				{movies.map((item)=>{
 					return <div key={item.imdbID} className='bg-stone-100 h-[550px] md:h-[650px] lg:h-[550px] w-full md:w-64 lg:w-72 relative'>
 			<Link to={`/movies/${item.imdbID}`}>
@@ -23,7 +24,6 @@ const Movies = () => {
 					</div>
 				})}
 			</div>
-
 		</div>
 	);
 };
